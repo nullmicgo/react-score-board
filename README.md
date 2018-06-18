@@ -9,7 +9,7 @@ In Presentational Component, it will includes Logical and Pure Component.
 
 
 
-![alt text](https://raw.githubusercontent.com/nullmicgo/react-score-board/master/screen.png)
-![alt text](https://raw.githubusercontent.com/nullmicgo/react-score-board/master/level001.png)
-![alt text](https://raw.githubusercontent.com/nullmicgo/react-score-board/master/level002.png)
+![react-score-board-screen](https://raw.githubusercontent.com/nullmicgo/react-score-board/master/screen.png)
+![component-level001](https://raw.githubusercontent.com/nullmicgo/react-score-board/master/level001.png)
+![component-level002](https://raw.githubusercontent.com/nullmicgo/react-score-board/master/level002.png)
 
