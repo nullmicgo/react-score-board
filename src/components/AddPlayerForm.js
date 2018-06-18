@@ -1,32 +1,29 @@
-import React, {Component, PropTypes} from 'react';
+import React, { Component, PropTypes } from 'react';
 
-
-export default class AddPlayerForm extends Component{
-    static propTypes : {
-        onAdd: React.PropTypes.func.isRequired,
-    };
-
-    state = {
-            name: ''
-    };
-
-
+export default class AddPlayerForm extends Component {
+  static propTypes: {
+    addPlayer: PropTypes.func.isRequired,
+  };
+  
+  state = {
+    name: ''
+  };
+  
   onNameChange = (e) => {
     const name = e.target.value;
     this.setState({ name: name });
   };
 
-  onSubmit = (e) => {
+  addPlayer = (e) => {
     if (e) e.preventDefault();
-    this.props.onAdd(this.state.name);
+    this.props.addPlayer(this.state.name);
     this.setState({ name: '' });
   };
 
-
-  render () {
+  render() {
     return (
       <div className="add-player-form">
-        <form onSubmit={this.onSubmit}>
+        <form onSubmit={this.addPlayer}>
           <input
             type="text"
             value={this.state.name}
@@ -37,9 +34,5 @@ export default class AddPlayerForm extends Component{
         </form>
       </div>
     );
-  }
-
-
-
-
+  }  
 }

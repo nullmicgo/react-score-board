@@ -1,59 +1,27 @@
-import React, {PropsTypes} from 'react';
+import React, { PropTypes } from 'react';
 
-const Counter = props =>{
-    return (
-      <div className="counter" >
-        <button className="counter-action decrement" onClick={() => props.onChange(-1)}>
-          -
-        </button>
-        <div className="counter-score"> {props.score} </div>
-        <button className="counter-action increment" onClick={() => props.onChange(1)}>
-          +
-        </button>
-      </div>
-    );
-   }
-   
-   Counter.propTypes = {
-     onChange: React.PropTypes.func.isRequired,
-     score: React.PropTypes.number.isRequired,
-   };
-   
-   const AddPlayerForm = React.createClass({
-     propTypes: {
-       onAdd: React.PropTypes.func.isRequired,
-     },
-   
-     getInitialState: function () {
-       return { name: '' };
-     },
-   
-     onNameChange: function (e) {
-       const name = e.target.value;
-       this.setState({ name: name });
-     },
-   
-     onSubmit: function (e) {
-       if (e) e.preventDefault();
-       this.props.onAdd(this.state.name);
-       this.setState({ name: '' });
-     },
-   
-     render: function () {
-       return (
-         <div className="add-player-form">
-           <form onSubmit={this.onSubmit}>
-             <input
-               type="text"
-               value={this.state.name}
-               onChange={this.onNameChange}
-               placeholder="Player Name"
-             />
-             <input type="submit" value="Add Player" />
-           </form>
-         </div>
-       );
-     }
-   });
+const Counter = props => {
+ return (
+   <div className="counter" >
+     <button 
+      className="counter-action decrement" 
+      onClick={ () => props.updatePlayerScore(props.index, -1) }>
+       -
+     </button>
+     <div className="counter-score"> {props.score} </div>
+     <button 
+      className="counter-action increment" 
+      onClick={ () => props.updatePlayerScore(props.index, 1) }>
+       +
+     </button>
+   </div>
+ );
+}
 
-   export default Counter;
+Counter.propTypes = {
+  updatePlayerScore: PropTypes.func.isRequired,
+  index: PropTypes.number.isRequired,
+  score: PropTypes.number.isRequired,
+};
+
+export default Counter;
