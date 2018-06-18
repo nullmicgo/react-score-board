@@ -2,6 +2,7 @@ import React from 'react';
 import Stopwatch from '../components/Stopwatch';
 import Counter from '../components/Counter';
 import Stats from '../components/Stats';
+import AddPlayerForm from '../components/AddPlayerForm';
 
 
 
@@ -105,6 +106,7 @@ Player.propTypes = {
   onRemove: React.PropTypes.func.isRequired,
   onScoreChange: React.PropTypes.func.isRequired,
 };
+
 
 
 
